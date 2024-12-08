@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { SlHeart, SlMagnifier } from 'react-icons/sl';
 import { LuMenu, LuUser } from 'react-icons/lu';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { HiOutlineMenuAlt3 } from 'react-icons/hi'; 
 import { IoMdClose } from 'react-icons/io'; 
 
 const Header = () => {
