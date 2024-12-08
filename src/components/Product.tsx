@@ -40,7 +40,7 @@ const Product = () => {
                 <div className="relative bg-white w-[285px] h-[446px]">
                     <div className="relative">
                         <Image src={Product2} alt="Leviosa" className="w-full h-[310px]" />
-                        <div className="absolute inset-0 bg-black/5  opacity-100 flex items-center justify-center transition duration-300">
+                        <div className="absolute inset-0 bg-black/8  opacity-100 flex items-center justify-center transition duration-300">
                             <button className="bg-white text-gray-800 px-4 py-2 rounded-md shadow-md hover:bg-gray-100">
                                 Add to cart
                             </button>
