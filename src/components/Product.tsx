@@ -146,7 +146,7 @@ const Product = () => {
                     </div>
                 </div>
             </div>
-            <button className="mt-6  ml-[500px] px-6 py-3 sm:px-10 sm:py-4 md:px-[72px] md:py-[25px] outline text-[#B88E2F] font-semibold  transition">
+            <button className="mt-6  md:ml-[500px] px-6 py-3 sm:px-10 sm:py-4 md:px-[72px] md:py-[25px] outline text-[#B88E2F] font-semibold  transition">
            Show More
           </button>
         </section>
