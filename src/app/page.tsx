@@ -3,7 +3,6 @@ import BrowseRange from "../components/BrowseRange"
 import Product from "@/components/Product"
 import Room from "@/components/Room"
 import Furniture from "@/components/Furniture";
-import Features from "@/components/Features";
 export default function Home() {
   return (
    <div>
