@@ -3,8 +3,8 @@ import React from 'react'
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-gray-100 py-8">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="bg-gray-100 py-8  px-5 ">
+        <div className="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1">
             <h2 className="font-bold text-lg mb-4">Funiro.</h2>
             <p className="text-sm text-gray-600">
@@ -12,7 +12,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="col-span-1">
+          <div className="col-span-1 ml-4">
             <h3 className="font-semibold text-sm mb-2">Links</h3>
             <ul className="list-none">
               <li><a href="#" className="text-sm top-[266px] text-gray-600 hover:underline">Home</a></li>

@@ -17,7 +17,7 @@ const Product = () => {
             </div>
 
             {/* Products Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
                 {/* Product 1 */}
                 <div className="relative bg-white w-[285px] h-[446px]">
                     <div className="relative">

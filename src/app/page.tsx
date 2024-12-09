@@ -1,22 +1,17 @@
-import Header from "../components/Header";
 import Hero from "../components/Hero";
 import BrowseRange from "../components/BrowseRange"
 import Product from "@/components/Product"
 import Room from "@/components/Room"
-// import RoomInspiration from "@/components/RoomInspiration";
-// import Benefits from "@/components/Benefits"
-import Footer from "@/components/Footer"
+import Furniture from "@/components/Furniture";
+import Features from "@/components/Features";
 export default function Home() {
   return (
    <div>
-    <Header/>
     <Hero/>
     <BrowseRange/>
     <Product/>
     <Room/>
-    {/* <RoomInspiration/> */}
-    {/* <Benefits/> */}
-    <Footer/>
+    <Furniture/>
    </div>
   );
 }
