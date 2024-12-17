@@ -1,7 +1,8 @@
 import SubhHero from '@/components/SubhHero'
 import React from 'react'
+import Link from 'next/link'
 import filter2 from "@/public/Vector (1).png"
-import filter1 from "@/public/Vector.png"
+import filter1 from "@/public/Vector_3.png"
 import dots4 from "@/public/Vector (2).png"
 import line from "@/public/Line 5.png"
 import Image from "next/image"
@@ -19,11 +20,11 @@ function shop() {
       <div className='bg-[#F9F1E7] w-full h-auto py-4 flex flex-col md:flex-row justify-between items-center px-6 md:px-12 space-y-4 md:space-y-0'>
         {/* Left Section */}
         <div className='flex flex-wrap md:flex-nowrap gap-4 md:gap-8 items-center'>
-          <Image src={filter1} alt="filter" className='' />
+          <Image src={filter1} alt="filter" />
           <h2 className='font-medium text-lg md:text-[24px]'>Filter</h2>
-          <Image src={dots4} alt="dots" className='' />
-          <Image src={filter2} alt="filter2" className='' />
-          <Image src={line} alt="line5" className='' />
+          <Image src={dots4} alt="dots"  />
+          <Image src={filter2} alt="filter2"  />
+          <Image src={line} alt="line5"/>
           <p className='text-sm md:text-base'>Showing 1–16 of 32 results</p>
         </div>
 
@@ -52,7 +53,8 @@ function shop() {
           {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* Product 1 */}
-            <div className="relative bg-white w-[285px] h-[446px]">
+           <Link href="/shop/product" >
+           <div className="relative bg-white w-[285px] h-[446px]">
               <div className="relative">
                 <Image src={Product1} alt="Syltherine" className="w-full h-auto" />
                 <span className="absolute top-4 right-4  bg-[#E97171] text-white text-xs px-3 py-4 h-[48px] w-[48px] rounded-full">
@@ -68,15 +70,16 @@ function shop() {
                 </div>
               </div>
             </div>
+            </Link>
 
             {/* Product 2 */}
             <div className="relative bg-white w-[285px] h-[446px]">
               <div className="relative">
                 <Image src={Product2} alt="Leviosa" className="w-full h-[310px]" />
                 <div className="absolute inset-0 bg-black/15  opacity-100 flex items-center justify-center transition duration-300">
-                  <button className="bg-white text-gray-800 px-4 py-2 rounded-md shadow-md hover:bg-gray-100">
+                <Link href="/cart"> <button className="bg-white text-gray-800 px-4 py-2 rounded-md shadow-md hover:bg-gray-100">
                     Add to cart
-                  </button>
+                  </button></Link> 
                 </div>
               </div>
               <div className="p-4 text-start bg-[#F4F5F7]">
@@ -121,6 +124,7 @@ function shop() {
         <SubProduct />
         <SubProduct />
         <SubProduct />
+
         <Button />
       </div>
       <Features />

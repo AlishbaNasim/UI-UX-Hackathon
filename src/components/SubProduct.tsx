@@ -8,9 +8,9 @@ const SubProduct = () => {
     return (
         <div>
             {/* Products Grid */}
-            <div className="grid grid-cols-1 mt-0  sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 mt-0 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
                 {/* Product 1 */}
-                <div className="relative bg-white w-[285px] h-[446px]">
+                <div className="relative bg-white  w-[285px] h-[446px]">
                     <div className="relative">
                         <Image src={Product1} alt="Syltherine" className="w-full h-auto" />
                         <span className="absolute top-4 right-4  bg-[#E97171] text-white text-xs px-3 py-4 h-[48px] w-[48px] rounded-full">

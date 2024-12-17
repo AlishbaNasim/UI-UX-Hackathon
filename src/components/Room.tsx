@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Product from "@/public/Products.png"
 
 function Room() {
@@ -11,7 +12,7 @@ function Room() {
             Our designer already made a lot of beautiful prototipe of rooms that
             inspire you
           </p>
-          <button className="bg-[#B88E2F]  mt-3 p-2 w-[176px] h-[48px]">Exlore More</button>
+         <Link href="/shop"><button className="bg-[#B88E2F]  mt-3 p-2 w-[176px] h-[48px]">Exlore More</button></Link> 
         </div>
         {/* Right Content */}
        <Image src={Product} alt="product"></Image>

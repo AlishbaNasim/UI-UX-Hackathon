@@ -2,9 +2,13 @@ import React from 'react'
 import Image from "next/image"
 import sofa from "@/public/Asgaard sofa 3.png"
 import { AiFillDelete } from "react-icons/ai";
+import SubhHero from '@/components/SubhHero';
+import Link from 'next/link';
 const page = () => {
     return (
-        <div><div className="container mx-auto p-12">
+        <div>
+            <SubhHero title='Cart' subtitle='Home > Cart'/>
+            <div className="container mx-auto p-12">
             {/* Cart Table  */}
             <div className="flex flex-col lg:flex-row gap-8">
                 <div className="w-full lg:w-3/4">
@@ -61,9 +65,11 @@ const page = () => {
                         <p className="font-medium">Total</p>
                         <p className="text-orange-500 font-medium">Rs. 250,000.00</p>
                     </div>
-                    <button className="w-full bg-white border border-black rounded-md py-2 font-medium hover:bg-gray-100">
+                   <Link href="/checkout">
+                   <button className="w-full bg-white border border-black rounded-md py-2 font-medium hover:bg-gray-100">
                         Check Out
                     </button>
+                    </Link>
                 </div>
             </div>
         </div>

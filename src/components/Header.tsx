@@ -7,20 +7,19 @@ import { SlHeart, SlMagnifier } from 'react-icons/sl';
 import { LuMenu, LuUser } from 'react-icons/lu';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="p-4 bg-white">
-      <div className="flex justify-between items-center w-full max-w-7xl mx-auto px-4 lg:px-8">
+    <div className="p-8 bg-white">
+      <div className="flex justify-between items-center w-full max-w-7xl mx-auto px-4  lg:px-8">
         {/* Logo Section */}
         <div>
-          <Image src={Logo} alt="Website Logo" width={120} height={40} />
+          <Image src={Logo} alt="Website Logo" width={120} height={50} />
         </div>
 
         {/* Navigation Links - Hidden on Mobile */}
-        <div className="hidden md:flex gap-6 font-medium text-sm lg:text-base">
+        <div className="hidden md:flex gap-6 font-medium text-sm lg:text-xl">
           <Link href="/" className="hover:text-gray-600 ">Home</Link>
           <Link href="/shop" className="hover:text-gray-600 ">Shop</Link>
           <Link href="/blog" className="hover:text-gray-600 ">Blog</Link>
@@ -29,11 +28,18 @@ const Header = () => {
         </div>
 
         {/* Icons Section */}
-        <div className="hidden md:flex gap-6 font-medium text-sm lg:text-base">
-          <LuUser className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
-          <SlMagnifier className="h-6  w-6 cursor-pointer hover:text-gray-800 transition" />
-          <SlHeart className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
-          <Link href="/cart"><AiOutlineShoppingCart className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
+        <div className="hidden md:flex gap-6 font-medium text-sm lg:text-xl">
+          <Link href="/shop/cartSlider">
+            <LuUser className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
+          </Link>
+          <Link href="/shop/cartSlider">
+            <SlMagnifier className="h-6  w-6 cursor-pointer hover:text-gray-800 transition" />
+          </Link>
+          <Link href="/shop/cartSlider">
+            <SlHeart className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
+          </Link>
+          <Link href="/shop/cartSlider">
+            <AiOutlineShoppingCart className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
           </Link></div>
 
         {/* Hamburger Menu for Mobile */}
@@ -59,11 +65,19 @@ const Header = () => {
           <Link href="/blog" className="hover:text-gray-600 transition">Blog</Link>
           <Link href="/contact" className="hover:text-gray-600 transition">Contact</Link>
           <div className="flex gap-6 text-gray-600">
-            <LuUser className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
-            <SlMagnifier className="h-6  w-6 cursor-pointer hover:text-gray-800 transition" />
-            <SlHeart className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
-            <Link href="/cart"><AiOutlineShoppingCart className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
+            <Link href="/shop/cartSlider">
+              <LuUser className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
             </Link>
+            <Link href="/shop/cartSlider">
+              <SlMagnifier className="h-6  w-6 cursor-pointer hover:text-gray-800 transition" />
+            </Link>
+            <Link href="/shop/cartSlider">
+              <SlHeart className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
+            </Link>
+            <Link href="/shop/cartSlider">
+              <AiOutlineShoppingCart className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
+            </Link>
+
           </div>
         </div>
       )}

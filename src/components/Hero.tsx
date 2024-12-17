@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Background from "@/public/background.png";
+import Link from 'next/link';
 
 function Hero() {
   return (
@@ -32,9 +33,11 @@ function Hero() {
           </p>
 
           {/* Button */}
+          <Link href="/shop">
           <button className="mt-6 px-6 py-3 sm:px-10 sm:py-4 md:px-[72px] md:py-[25px] bg-yellow-600 text-white font-semibold shadow-lg hover:bg-yellow-700 transition">
             Buy Now
           </button>
+          </Link>
         </div>
       </div>
     </section>
