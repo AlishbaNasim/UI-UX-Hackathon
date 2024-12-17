@@ -7,7 +7,7 @@ import Link from 'next/link'
 import CartSlider from '@/components/CartSlider'
 
 function Page() {
-  const [isCartOpen, setIsCartOpen] = useState(true); 
+  const [isCartOpen] = useState(true); 
 
   return (
     <div >
