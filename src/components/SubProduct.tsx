@@ -96,7 +96,7 @@ const SubProduct = () => {
                                 </div>
                                 <div className="flex gap-2 ">
                                     <LuArrowRightLeft />
-                                    <Link href="#"> <button>Compare</button></Link>
+                                    <Link href="/compare"> <button>Compare</button></Link>
                                 </div>
                                 <div className="flex gap-2">
                                     <BsHeart />

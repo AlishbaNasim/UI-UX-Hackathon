@@ -131,15 +131,19 @@ const Product = () => {
                             <div className="flex space-x-4 text-white font-bold text-base">
                                 <div className="flex gap-2">
                                     <PiShareNetworkFill />
+                                    <Link href="/shop/product">
                                     <button>Share</button>
+                                    </Link>
                                 </div>
                                 <div className="flex gap-2 ">
                                     <LuArrowRightLeft />
+                                   <Link href="/compare">
                                     <button>Compare</button>
+                                    </Link>
                                 </div>
                                 <div className="flex gap-2">
                                     <BsHeart />
-                                    <Link href="/shop/product">
+                                    <Link href="/shop/cartSlider">
                                         <button >Like</button>
                                     </Link>
                                 </div>
