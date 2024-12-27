@@ -63,7 +63,7 @@ const ProductDetails = () => {
 
           {/* Description */}
           <p className="text-gray-700 mt-4 max-w-[400px] text-[14px] font-medium leading-6">
-          Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
+            Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
           </p>
 
           {/* Size Options */}
@@ -106,9 +106,10 @@ const ProductDetails = () => {
             <Link href="/cart">
               <button className="px-6 py-2 border rounded-md">Add To Cart</button>
             </Link>
-            <button className="px-6 py-2 border rounded-md">+ Compare</button>
+            <Link href="/compare">
+              <button className="px-6 py-2 border rounded-md">+ Compare</button>
+            </Link>
           </div>
-
           {/* Additional Details */}
           <hr className="my-6" />
           <div className="text-sm text-gray-500 space-y-2">
