@@ -38,7 +38,7 @@ const Header = () => {
           <Link href="/shop/cartSlider">
             <SlHeart className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
           </Link>
-          <Link href="/shop/cartSlider">
+          <Link href="/cart">
             <AiOutlineShoppingCart className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
           </Link></div>
 

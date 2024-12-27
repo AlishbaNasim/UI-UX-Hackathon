@@ -1,168 +1,178 @@
-import Image from "next/image";
-import Product1 from "@/public/p1.png";
-import Product2 from "@/public/p2.png";
-import Product3 from "@/public/p3.png";
-import Product4 from "@/public/p4.png";
-import Product5 from "@/public/p5.png";
-import Product6 from "@/public/p6.png";
-import Product7 from "@/public/p7.png";
-import Product8 from "@/public/p8.png";
+import Image, { StaticImageData } from "next/image";
+import Product1 from "@/public/p1.png"
+import Product2 from "@/public/p2.png"
+import Product3 from "@/public/p3.png"
+import Product4 from "@/public/p4.png"
+import Product5 from "@/public/p5.png"
+import Product6 from "@/public/p6.png"
+import Product7 from "@/public/p7.png"
+import Product8 from "@/public/p8.png"
+import { PiShareNetworkFill } from "react-icons/pi";
+import { BsHeart } from "react-icons/bs";
+import { LuArrowRightLeft } from "react-icons/lu";
 import Link from "next/link";
+
+type Product = {
+    id: number;
+    image: StaticImageData;
+    title: string;
+    description?: string;
+    price: string;
+    originalPrice?: string;
+    badge?: string;
+    badgeColor?: string;  
+};
+
+const products: Product[] = [
+    {
+        id: 1,
+        title: "Syltherine",
+        description: "Stylish cafe chair",
+        image: Product1,
+        price: "Rp 2.500.000",
+        originalPrice: "Rp 3.500.000",
+        badge: "-30%",
+        badgeColor: "[#E97171]",
+    },
+    {
+        id: 2,
+        title: "Leviosa",
+        description: "Stylish cafe chair",
+        image: Product2,
+        price: "Rp 2.500.000",
+    },
+    {
+        id: 3,
+        title: "Lolito",
+        description: "Luxury big sofa",
+        image: Product3,
+        price: "Rp 7.000.000",
+        originalPrice: "Rp 14.000.000",
+        badge: "-50%",
+        badgeColor: "[#E97171]",
+    },
+    {
+        id: 4,
+        title: "Respira",
+        description: "Outdoor bar table and stool",
+        image: Product4,
+        price: "Rp 500.000",
+        badge: "New",
+        badgeColor: "teal-500",
+    },
+    {
+        id: 5,
+        title: "Grifo",
+        description: "Night lamp",
+        image: Product5,
+        price: "Rp 1.500.000",
+    },
+    {
+        id: 6,
+        title: "Muggo",
+        description: "Small mug",
+        image: Product6,
+        price: "Rp 150.000",
+        badge: "New",
+        badgeColor: "teal-500",
+    },
+    {
+        id: 7,
+        title: "Pingky",
+        description: "Cute bed set",
+        image: Product7,
+        price: "Rp 7.000.000",
+        originalPrice: "Rp 14.000.000",
+        badge: "-50%",
+        badgeColor: "[#E97171]",
+    },
+    {
+        id: 8,
+        title: "Potty",
+        description: "Minimalist flower pot",
+        image: Product8,
+        price: "Rp 500.000",
+        badge: "New",
+        badgeColor: "teal-500",
+    },
+];
+
 const Product = () => {
     return (
-        <section className="bg-white py-16 px-4 md:px-16">
-            {/* Section Title */}
-            <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-gray-800">Our Products</h2>
-            </div>
-
-            {/* Products Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                <Link href="/shop">
-                    {/* Product 1 */}
-                    <div className="relative bg-white w-[285px] h-[446px]">
-                        <div className="relative">
-                            <Image src={Product1} alt="Syltherine" className="w-full h-auto" />
-                            <span className="absolute top-4 right-4  bg-[#E97171] text-white text-xs px-3 py-4 h-[48px] w-[48px] rounded-full">
-                                -30%
+        <div>
+            <h1 className="text-center font-bold text-4xl mb-6">Our Products</h1>
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-auto">
+                {products.map((product) => (
+                    <div
+                        key={product.id}
+                        className="relative group bg-[#F4F5F7] w-[285px] h-[436px] mx-auto"
+                    >
+                        {/* Product Image */}
+                        <Image
+                            src={product.image}
+                            alt={product.title}
+                            width={285}
+                            height={200}
+                            className="w-full h-auto object-cover"
+                        />
+                        {/* Badge */}
+                        {product.badge && (
+                            <span
+                                className={`absolute top-4 right-4 bg-${product.badgeColor} text-white text-xs px-3 py-4 h-[48px] w-[48px] rounded-full flex items-center justify-center`}
+                            >
+                                {product.badge}
                             </span>
-                        </div>
-                        <div className="p-4 text-start bg-[#F4F5F7]">
-                            <h3 className="text-2xl font-semibold text-black">Syltherine</h3>
-                            <p className="text-sm font-medium text-[#898989]">Stylish cafe chair</p>
-                            <div className="mt-2 flex items-start space-x-3">
-                                <span className="text-lg font-semibold text-black">Rp 2.500.000</span>
-                                <span className="text-[16px] line-through text-gray-500 ">Rp 3.500.000</span>
+                        )}
+                        {/* Hover Options */}
+                        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <Link href="/cart"><button className="bg-white text-[#B88E2F] px-9 py-2 mb-2  font-bold">
+                                Add to cart
+                            </button></Link>
+                            <div className="flex space-x-4 text-white font-bold text-base">
+                                <div className="flex gap-2">
+                                    <PiShareNetworkFill />
+                                    <button>Share</button>
+                                </div>
+                                <div className="flex gap-2 ">
+                                    <LuArrowRightLeft />
+                                    <button>Compare</button>
+                                </div>
+                                <div className="flex gap-2">
+                                    <BsHeart />
+                                    <Link href="/shop/product">
+                                        <button >Like</button>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </Link>
-                {/* Product 2 */}
-                <div className="relative bg-white w-[285px] h-[446px]">
-                    <div className="relative">
-                        <Image src={Product2} alt="Leviosa" className="w-full h-[310px]" />
-                        <div className="absolute inset-0 bg-black/8  opacity-100 flex items-center justify-center transition duration-300">
-                            <Link href="/cart">
-                                <button className="bg-white text-gray-800 px-4 py-2 rounded-md shadow-md hover:bg-gray-100">
-                                    Add to cart
-                                </button>
-                            </Link>
+
+                        {/* Product Details */}
+                        <h3 className="text-lg font-semibold mt-4 mx-2">{product.title}</h3>
+                        {product.description && (
+                            <p className="text-sm text-gray-600 mx-2 mt-2">{product.description}</p>
+                        )}
+                        <div className="mt-4 mx-2">
+                            <span className="text-lg font-bold text-black">{product.price}</span>
+                            {product.originalPrice && (
+                                <span className="text-sm text-gray-500 line-through ml-2">
+                                    {product.originalPrice}
+                                </span>
+                            )}
                         </div>
                     </div>
-                    <div className="p-4 text-start bg-[#F4F5F7]">
-                        <h3 className="text-2xl font-semibold text-black">Leviosa</h3>
-                        <p className="text-sm font-medium text-[#898989]">Stylish cafe chair</p>
-                        <span className="text-lg font-semibold text-black">Rp 2.500.000</span>
-                    </div>
-                </div>
-
-                {/* Product 3 */}
-                <div className="relative bg-white w-[285px] h-[446px]">
-                    <div className="relative">
-                        <Image src={Product3} alt="Lolito" className="w-full h-auto" />
-                        <span className="absolute top-4 right-4 bg-[#E97171] text-white text-xs px-3 py-4 h-[48px] w-[48px] rounded-full">
-                            -50%
-                        </span>
-                    </div>
-                    <div className="p-4 text-start bg-[#F4F5F7]">
-                        <h3 className="text-2xl font-semibold text-black">Lolito</h3>
-                        <p className="text-sm  font-medium text-[#898989]">Luxury big sofa</p>
-                        <div className="mt-2 flex items-start space-x-3">
-                            <span className="text-lg font-semibold text-black">Rp 7.000.000</span>
-                            <span className="text-[16px] line-through text-gray-500 ">Rp 14.000.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Product 4 */}
-                <div className="relative bg-white w-[285px] h-[446px]">
-                    <div className="relative">
-                        <Image src={Product4} alt="Respira" className="w-full h-[310px]" />
-                        <span className="absolute top-4 right-4 bg-teal-500 text-white text-xs  px-3 py-4 h-[48px] w-[48px] rounded-full">
-                            New
-                        </span>
-                    </div>
-                    <div className="p-4 text-start bg-[#F4F5F7]">
-                        <h3 className="text-2xl font-semibold text-black">Respira</h3>
-                        <p className="text-sm  font-medium text-[#898989]">Outdoor bar table and stool</p>
-                        <span className="text-lg font-semibold text-black">Rp 500.000</span>
-                    </div>
-                </div>
-
-                {/* Product 5 */}
-                <div className="relative bg-white w-[285px] h-[446px]">
-                    <div className="relative">
-                        <Image src={Product5} alt="Grifo" className="w-full h-auto" />
-                    </div>
-                    <div className="p-4 text-start bg-[#F4F5F7]">
-                        <h3 className="text-2xl font-semibold text-black">Grifo</h3>
-                        <p className="text-sm font-medium text-[#898989]">Night lamp</p>
-                        <span className="text-lg font-semibold text-black">Rp 1.500.000</span>
-                    </div>
-                </div>
-
-                {/* Product 6 */}
-                <div className="relative bg-white w-[285px] h-[436px]">
-                    <div className="relative">
-                        <Image src={Product6} alt="Pingky" className="w-full h-[292px]" />
-                        <span className="absolute top-4 right-4 bg-teal-500 text-white text-xs  px-3 py-4 h-[48px] w-[48px] rounded-full">
-                            New
-                        </span>
-                    </div>
-                    <div className="p-4 text-start bg-[#F4F5F7]">
-                        <h3 className="text-2xl font-semibold text-black">Pingky</h3>
-                        <p className="text-sm font-medium text-[#898989]">Cute bed set</p>
-                        <div className="mt-2 flex items-start justify-start space-x-3">
-                            <span className="text-lg font-semibold text-black">Rp 7.000.000</span>
-                            <span className="text-[16px] line-through text-gray-500">Rp 14.000.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Product 7 */}
-                <div className="relative bg-white w-[285px] h-[446px]">
-                    <div className="relative">
-                        <Image src={Product7} alt="Muggo" className="w-full h-auto" />
-                        <span className="absolute top-4 right-4 bg-[#E97171] text-white text-xs  px-3 py-4 h-[48px] w-[48px] rounded-full">
-                            -50%
-                        </span>
-                    </div>
-                    <div className="p-4 text-start bg-[#F4F5F7]">
-                        <h3 className="text-2xl font-semibold text-black">Muggo</h3>
-                        <p className="text-sm font-medium text-[#898989]">Small mug</p>
-                        <span className="text-lg font-semibold text-black">Rp 150.000</span>
-                    </div>
-                </div>
-
-                {/* Product 8 */}
-                <div className="relative bg-white w-[285px] h-[446px]">
-                    <div className="relative">
-                        <Image src={Product8} alt="Potty" className="w-full h-auto" />
-                        <span className="absolute top-4 right-4 bg-teal-500 text-white text-xs  px-3 py-4 h-[48px] w-[48px] rounded-full">
-                            New
-                        </span>
-                    </div>
-                    <div className="p-4 text-start bg-[#F4F5F7]">
-                        <h3 className="text-2xl font-semibold text-black">Potty</h3>
-                        <p className="text-sm font-medium text-[#898989]">Minimalist flower pot</p>
-                        <span className="text-lg font-semibold text-black">Rp 500.000</span>
-                    </div>
-                </div>
+                ))}
             </div>
-            <Link href="/shop">
-  <button
-    className="mt-6 px-6 py-3 text-[#B88E2F] font-semibold outline 
-    sm:px-10 sm:py-4 sm:ml-28
-    md:px-12 md:py-5 md:ml-56 
-    lg:px-16 lg:py-6 lg:ml-72 
-    xl:ml-80"
-  >
-    Show More
-  </button>
-</Link>
+            <div className="flex flex-col items-center sm:items-start md:items-center lg:items-start lg:ml-[545px] m-6">
+                <Link href="/shop">
+                    <button
+                        className=" text-[#B88E2F] font-semibold text-base outline w-[234px] p-6">
+                        Show More
+                    </button>
+                </Link>
+            </div>
 
-        </section>
-    );
+        </div>
+    )
 };
 
 export default Product;

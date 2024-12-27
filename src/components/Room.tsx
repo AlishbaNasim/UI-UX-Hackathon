@@ -5,9 +5,9 @@ import Product from "@/public/Products.png"
 function Room() {
   return (
     <div>
-      <div className="md:flex items-center bg-[#FCF8F3]">
-        <div className="pt-9 p-8 items-center">
-          <h4 className=" font-extrabold text-[2rem]">50+ Beautiful rooms inspiration</h4>
+      <div className="lg:flex items-center bg-[#FCF8F3]">
+        <div className="pt-9 p-8 items-center text-center">
+          <h4 className=" font-extrabold  text-[2rem]">50+ Beautiful rooms inspiration</h4>
           <p>
             Our designer already made a lot of beautiful prototipe of rooms that
             inspire you

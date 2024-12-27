@@ -50,8 +50,8 @@ const ProductDetails = () => {
         </div>
 
         {/* Right: Product Details */}
-        <div>
-          <h1 className="text-2xl font-bold">Asgaard sofa</h1>
+        <div className="pl-3">
+          <h1 className="text-2xl mt-7 font-bold">Asgaard sofa</h1>
           <p className="text-lg text-[#9F9F9F] mt-2">Rs. 250,000.00</p>
 
           {/* Rating */}
