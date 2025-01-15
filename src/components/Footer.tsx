@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className="bg-gray-100 py-8  px-5 ">
         <div className="container ml-4 mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1">
-            <h2 className="font-bold text-lg mb-4">Funiro.</h2>
+            <h2 className="font-bold text-lg mb-4">Blog.</h2>
             <p className="text-sm text-gray-600">
               4870 University Drive Suite 200 Coral Gables,<br/> FL 33146-4104
             </p>
