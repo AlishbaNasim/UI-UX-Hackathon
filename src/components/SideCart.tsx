@@ -5,7 +5,27 @@ import { useCart } from "@/app/context/cartProvider";
 import { Minus, Plus } from "lucide-react";
 import Link from "next/link";
 import cross from "@/public/Vector (4).png";
-const SideCart = ({ isOpen, toggleCart }: any) => {
+
+interface SideCartProps {
+  isOpen: boolean;
+  toggleCart: () => void;
+}
+
+type CartItem = {
+  product: {
+    id: string;
+    title: string;
+    imageUrl: string;
+    price: number;
+    description: string;
+    discountPercentage: number;
+    isNew: boolean;
+    tags:string[]
+  };
+  count: number;
+};
+
+const SideCart: React.FC<SideCartProps> = ({ isOpen, toggleCart }) => {
   const { items: cartItems, updateCartQuantity, removeFromCart } = useCart();
 
   const handleIncreaseQuantity = (productId: string) => {
@@ -58,9 +78,9 @@ const SideCart = ({ isOpen, toggleCart }: any) => {
               Your Cart is empty
             </p>
           ) : (
-            cartItems.map((item: any) => (
+            cartItems.map((item: CartItem) => (
               <div
-                key={item.product._id}
+                key={item.product.id}
                 className="flex items-center justify-between border-b pb-10"
               >
                 <div className="flex items-center space-x-4">
@@ -79,12 +99,12 @@ const SideCart = ({ isOpen, toggleCart }: any) => {
                 <div className="flex items-center gap-4 border px-3 py-1 rounded-md">
                   <Minus
                     className="cursor-pointer text-gray-500"
-                    onClick={() => handleDecreaseQuantity(item.product._id)}
+                    onClick={() => handleDecreaseQuantity(item.product.id)}
                   />
                   <span>{item.count}</span>
                   <Plus
                     className="cursor-pointer text-gray-500"
-                    onClick={() => handleIncreaseQuantity(item.product._id)}
+                    onClick={() => handleIncreaseQuantity(item.product.id)}
                   />
                 </div>
                 <p className="text-gray-700">

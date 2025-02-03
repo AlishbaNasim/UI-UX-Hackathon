@@ -24,6 +24,8 @@ const WishlistPage = () => {
               <Image
                 src={product.imageUrl}
                 alt={product.title}
+                width={32}
+                height={32}
                 className="w-32 h-32 object-cover rounded-md mb-2"
               />
               <h2 className="text-lg font-medium text-center">

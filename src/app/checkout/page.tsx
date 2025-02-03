@@ -43,7 +43,17 @@ const Checkout = () => {
   };
 
   const validateForm = () => {
-    const newErrors:any = {};
+    const newErrors = {
+      firstName: "",
+      lastName: "",
+      streetAddress: "",
+      country: "",
+      city: "",
+      zip: "",
+      phone: "",
+      email: "",
+    };
+  
     if (!formData.firstName) newErrors.firstName = "First Name is required";
     if (!formData.lastName) newErrors.lastName = "Last Name is required";
     if (!formData.streetAddress)
@@ -53,9 +63,11 @@ const Checkout = () => {
     if (!formData.zip) newErrors.zip = "ZIP Code is required";
     if (!formData.phone) newErrors.phone = "Phone is required";
     if (!formData.email) newErrors.email = "Email is required";
+  
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return Object.values(newErrors).every((error) => error === ""); // Returns true if no errors
   };
+  
 
   const handlePlaceOrder = () => {
     if (!validateForm()) return;
