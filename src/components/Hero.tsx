@@ -1,6 +1,6 @@
-import Image from 'next/image';
+import Image from "next/image";
 import Background from "@/public/background.png";
-import Link from 'next/link';
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -29,14 +29,15 @@ function Hero() {
 
           {/* Description */}
           <p className="mt-2 md:mt-4  md:w-[470px] text-sm sm:text-base md:text-lg text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec ullamcorper mattis.
           </p>
 
           {/* Button */}
           <Link href="/shop">
-          <button className="mt-6 px-6 py-3 sm:px-10 sm:py-4 md:px-[72px] md:py-[25px] bg-yellow-600 text-white font-semibold shadow-lg hover:bg-yellow-700 transition">
-            Buy Now
-          </button>
+            <button className="mt-6 px-6 py-3 sm:px-10 sm:py-4 md:px-[72px] md:py-[25px] bg-yellow-600 text-white font-semibold shadow-lg hover:bg-yellow-700 transition">
+              Buy Now
+            </button>
           </Link>
         </div>
       </div>

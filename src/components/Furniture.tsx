@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import image from "@/public/room.png"
+import image from "@/public/room.png";
 
-const   Furniture = () => {
+const Furniture = () => {
   return (
     <div className="bg-white p-4">
       <div className="text-center mt-8">

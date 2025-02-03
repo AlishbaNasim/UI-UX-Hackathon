@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "next/image"
-import sofa1 from "@/public/Asgaard sofa 3.png"
-import sofa2 from "@/public/Outdoor sofa set 2.png"
-import star from "@/public/stars.png"
-import line from "@/public/Line 5.png"
+import Image from "next/image";
+import sofa1 from "@/public/Asgaard sofa 3.png";
+import sofa2 from "@/public/Outdoor sofa set 2.png";
+import star from "@/public/stars.png";
+import line from "@/public/Line 5.png";
 import { IoIosArrowDown } from "react-icons/io";
 import Link from "next/link";
 
@@ -33,14 +33,13 @@ const ProductShow = () => {
             className="h-[142px] w-[229px] rounded-md bg-[#F9F1E7] mb-4"
           ></Image>
           <h3 className="text-2xl font-medium text-gray-800">Asgaard Sofa</h3>
-          <p className="text-lg font-medium text-gray-600 mt-1">Rs. 250,000.00</p>
+          <p className="text-lg font-medium text-gray-600 mt-1">
+            Rs. 250,000.00
+          </p>
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2 text-lg font-medium">
               <h2>4.7</h2>
-              <Image
-                src={star}
-                alt="star">
-              </Image>
+              <Image src={star} alt="star"></Image>
             </div>
             <Image src={line} alt="alt"></Image>
             <span className="text-sm text-gray-500">204 Review</span>
@@ -48,7 +47,7 @@ const ProductShow = () => {
         </div>
 
         {/* Column 3: Product Card 2 */}
-        <div  className="mx-auto">
+        <div className="mx-auto">
           <Image
             src={sofa2}
             alt="Outdoor Sofa Set"
@@ -57,14 +56,13 @@ const ProductShow = () => {
           <h3 className="text-2xl font-medium text-gray-800">
             Outdoor Sofa Set
           </h3>
-          <p className="text-lg font-medium text-gray-600 mt-1">Rs. 224,000.00</p>
+          <p className="text-lg font-medium text-gray-600 mt-1">
+            Rs. 224,000.00
+          </p>
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2 text-lg font-medium">
               <h2>4.2</h2>
-              <Image
-                src={star}
-                alt="star">
-              </Image>
+              <Image src={star} alt="star"></Image>
             </div>
             <Image src={line} alt="alt"></Image>
             <span className="text-sm text-gray-500">145 Review</span>
@@ -75,19 +73,20 @@ const ProductShow = () => {
         <div className="mt-12 mx-auto">
           <h1 className="text-2xl font-medium ">Add A Product</h1>
           <div className="flex justify-between items-center mt-5">
-          <Link href="/shop">  <button className="bg-[#B88E2F] w-[223px] text-white px-6 py-3 text-sm font-medium rounded-md flex items-center">
-              Choose a Product
-              <span className="pl-12 text-2xl">
-                <IoIosArrowDown />
-              </span>
-               </button>
-               </Link>
+            <Link href="/shop">
+              {" "}
+              <button className="bg-[#B88E2F] w-[223px] text-white px-6 py-3 text-sm font-medium rounded-md flex items-center">
+                Choose a Product
+                <span className="pl-12 text-2xl">
+                  <IoIosArrowDown />
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
 
 export default ProductShow;

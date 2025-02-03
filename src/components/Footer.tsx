@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
   return (
@@ -6,28 +6,69 @@ const Footer = () => {
       <footer className="bg-gray-100 py-8  px-5 ">
         <div className="container ml-4 mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1">
-            <h2 className="font-bold text-lg mb-4">Blog.</h2>
+            <h2 className="font-bold text-lg mb-4">Furniro.</h2>
             <p className="text-sm text-gray-600">
-              4870 University Drive Suite 200 Coral Gables,<br/> FL 33146-4104
+              4870 University Drive Suite 200 Coral Gables,
+              <br /> FL 33146-4104
             </p>
           </div>
 
           <div className="col-span-1">
             <h3 className="font-semibold text-sm mb-2">Links</h3>
             <ul className="list-none">
-              <li><a href="/" className="text-sm top-[266px] text-gray-600 hover:underline">Home</a></li>
-              <li><a href="/shop" className="text-sm top-[266px]  text-gray-600 hover:underline">Shop</a></li>
-              <li><a href="/blog" className="text-sm top-[266px] text-gray-600 hover:underline">About</a></li>
-              <li><a href="/contact" className="text-sm top-[266px] text-gray-600 hover:underline">Contact</a></li>
+              <li>
+                <a
+                  href="/"
+                  className="text-sm top-[266px] text-gray-600 hover:underline"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/shop"
+                  className="text-sm top-[266px]  text-gray-600 hover:underline"
+                >
+                  Shop
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/blog"
+                  className="text-sm top-[266px] text-gray-600 hover:underline"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contact"
+                  className="text-sm top-[266px] text-gray-600 hover:underline"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
           <div className="col-span-1">
             <h3 className="font-semibold text-sm mb-2">Help</h3>
             <ul className="list-none">
-              <li><a href="#" className="text-sm text-gray-600 hover:underline">Payment Options</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:underline">Returns</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:underline">Privacy Policies</a></li>
+              <li>
+                <a href="#" className="text-sm text-gray-600 hover:underline">
+                  Payment Options
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm text-gray-600 hover:underline">
+                  Returns
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm text-gray-600 hover:underline">
+                  Privacy Policies
+                </a>
+              </li>
             </ul>
           </div>
           <div className="col-span-1 ">
@@ -46,7 +87,7 @@ const Footer = () => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

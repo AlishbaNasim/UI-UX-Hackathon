@@ -1,4 +1,9 @@
-import { FaTrophy, FaShieldAlt, FaShippingFast, FaHeadset } from 'react-icons/fa';
+import {
+  FaTrophy,
+  FaShieldAlt,
+  FaShippingFast,
+  FaHeadset,
+} from "react-icons/fa";
 
 const Features = () => {
   return (
@@ -17,7 +22,9 @@ const Features = () => {
         <div className="flex items-center space-x-4">
           <FaShieldAlt className="text-3xl" />
           <div>
-            <h3 className="text-lg font-bold text-gray-800">Warranty Protection</h3>
+            <h3 className="text-lg font-bold text-gray-800">
+              Warranty Protection
+            </h3>
             <p className="text-sm text-gray-600">Over 2 years</p>
           </div>
         </div>
