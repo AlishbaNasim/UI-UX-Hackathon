@@ -8,7 +8,7 @@ const client = createClient({
 });
 
 // Define a type for query parameters
-type SanityFetchParams = Record<string, any>;
+type SanityFetchParams = Record<string, string>;
 
 // Define the fetch function with generic return type
 export async function sanityFetch<T>({
