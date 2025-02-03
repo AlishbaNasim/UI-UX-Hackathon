@@ -5,9 +5,11 @@ import { PiShareNetworkFill } from "react-icons/pi";
 import { BsHeart } from "react-icons/bs";
 import { LuArrowRightLeft } from "react-icons/lu";
 import Link from "next/link";
-import { sanityFetch } from "@/sanity/lib/fetch";
+// import { sanityFetch } from "@/sanity/lib/fetch";
 import { allProductsQueries } from "@/sanity/lib/queries";
 import { useCart } from "@/app/context/cartProvider";
+// import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/fetch";
 
 type ProductType = {
   id: string;
@@ -23,23 +25,35 @@ type ProductType = {
   };
   tags: [];
 };
-
+// export async function sanityFetch({
+//   query,
+//   params = {},
+// }: {
+//   query: string;
+//   params?: any;
+// }): Promise<ProductType[]> { // Explicitly return ProductType[]
+//   return await client.fetch(query, params);
+// }
 function Product() {
   const [products, setProducts] = useState<ProductType[]>([]);
-  // State to hold cart items
-  // const [cartItems, setCartItems] = useState<any[]>([]);
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const data = await sanityFetch({ query: allProductsQueries });
+        const data = await sanityFetch({ query: allProductsQueries }) as ProductType[];
         setProducts(data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          console.error("Error fetching products:", error.message);
+        } else {
+          console.error("Unexpected error:", error);
+        }
       }
     };
 
     fetchProducts();
   }, []);
+
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
     alert("Product link copied to clipboard!");

@@ -31,7 +31,7 @@ function SubProduct() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const data = await sanityFetch({ query: subProductQueries });
+        const data = await sanityFetch({ query: subProductQueries }) as ProductType[];
         setSubProducts(data);
       } catch (error) {
         console.error("Error fetching products:", error);
