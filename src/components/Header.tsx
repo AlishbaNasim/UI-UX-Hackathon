@@ -9,6 +9,8 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import { useCart } from "@/app/context/cartProvider";
 import SideCart from "./SideCart";
+import { SignInButton, SignUpButton } from "@clerk/nextjs";
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,7 +51,9 @@ const Header = () => {
 
         {/* Icons Section */}
         <div className="hidden md:flex gap-6 font-medium text-sm lg:text-xl">
-          <Link href="/">
+        <Link href="/sign-up"><SignUpButton/></Link>
+        <Link href="/sign-in"><SignInButton/></Link>
+          <Link href="/user/profile">
             <LuUser className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
           </Link>
           <Link href="/search">
@@ -106,7 +110,10 @@ const Header = () => {
             Contact
           </Link>
           <div className="flex space-x-6 mt-4">
-            <Link href="/">
+            <Link href="/sign-up"><SignUpButton/></Link>
+        <Link href="/sign-in"><SignInButton/></Link>
+      
+            <Link href="/user/profile">
               <LuUser className="h-6 w-6 cursor-pointer hover:text-gray-800 transition" />
             </Link>
             <Link href="/search">

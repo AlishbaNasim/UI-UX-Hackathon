@@ -1,17 +1,15 @@
+
 import type { Metadata } from "next";
-import { Poppins } from 'next/font/google';
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";;
+import Footer from "@/components/Footer";
 import Provide from "@/components/Provider";
-
-
-
+import { Providers } from "@/components/Providers";
 const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['100','200','300','400','500','600', '700'],
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
-
 
 export const metadata: Metadata = {
   title: "E-commerce website",
@@ -24,20 +22,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-   
-    <html lang="en">
-      <body
-           className={poppins.className}
-      >
-       <Provide>
-        <Header/>
-     
-        {children}
-        
-        <Footer/>
-       </Provide>
-      </body>
-    </html>
-   
+    <Providers>
+      <html lang="en">
+        <body className={poppins.className}>
+          <Provide>
+            <Header />
+
+            {children}
+
+            <Footer />
+          </Provide>
+        </body>
+      </html>
+    </Providers>
   );
 }
