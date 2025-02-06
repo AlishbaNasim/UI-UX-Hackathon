@@ -28,11 +28,16 @@
 // };
 import { authMiddleware } from "@clerk/nextjs";
 
-// Example Edge Middleware setup for Next.js 13
+// Define public routes (No authentication required)
 export default authMiddleware({
-  publicRoutes: ["/", "/about"], // Open routes
-  ignoredRoutes: ["/api/webhooks"], // Routes to ignore
+  publicRoutes: ["/", "/about"],
 });
+
+// Apply middleware to all routes except _next/static, _next/image, and API routes
+export const config = {
+  matcher: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+};
+
 
 // import { authMiddleware } from "@clerk/nextjs/server";
 
